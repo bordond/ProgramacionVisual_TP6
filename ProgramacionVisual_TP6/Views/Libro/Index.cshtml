@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ProgramacionVisual_TP6.Models.Libro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Agregar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Idlibro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edicion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Paginas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Editorial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ciudadypais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fechadeedicion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idlibro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edicion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Autor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISBN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paginas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Editorial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ciudadypais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fechadeedicion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { Idlibro = item.Idlibro }) |
+            @Html.ActionLink("Detalles", "Detalles", new { Idlibro = item.Idlibro }) |
+            @Html.ActionLink("Eliminar", "Eliminar", new { Idlibro = item.Idlibro })
+        </td>
+    </tr>
+}
+
+</table>
